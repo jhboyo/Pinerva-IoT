@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hello WebSocket</title>
+</head>
+<body>
+
+	<div>Hello Websocket</div>
+	
+	<div>
+	${message}
+	<h1 th:text="message">thymeleaf test page</h1>
+	</div>
+	
+	<script type="text/javascript">
+	$(window).on('load', function() {
+		
+		var msg = [[${message}]];
+		
+		console.log("message : " + message);
+		
+		if (message=='success') {
+			alert('정상적으로 처리 되었습니다.');
+		}
+	});
+	
+	</script>
+</body>
+</html>
